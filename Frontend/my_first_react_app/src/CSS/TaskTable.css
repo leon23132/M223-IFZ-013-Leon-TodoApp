@@ -1,0 +1,18 @@
+.sidebar {
+    width: 200px; /* Breite der Seitenleiste */
+    height: 100%; /* Vollständige Höhe des Bildschirms */
+    background-color: #f0f0f0; /* Hintergrundfarbe der Seitenleiste */
+    padding: 20px; /* Innenabstand der Seitenleiste */
+  }
+  
+  .content {
+    flex: 1; /* Flexibles Wachstum für den Hauptinhalt */
+  }
+  
+  .container {
+    display: flex; /* Flexbox-Container */
+    height: 100vh; /* Vollständige Höhe des Bildschirms */
+
+  }
+  
+  

@@ -1,0 +1,88 @@
+/* styles.css */
+
+/* Stil für das Hauptcontainer */
+.task-editor-container {
+    margin: 20px;
+  }
+  
+  /* Stil für die Eingabefelder */
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  /* Stil für Labels */
+  label {
+    font-weight: bold;
+  }
+  
+  /* Stil für die Buttons */
+  .btn {
+    margin-right: 10px;
+  }
+  
+  /* Zentrieren der Buttons */
+  .text-center {
+    text-align: center;
+  }
+
+  
+/* TaskEditor.css */
+
+.form-group {
+    margin-bottom: 1rem; /* Abstand zwischen den Formularelementen */
+  }
+  
+  label {
+    font-weight: bold; /* Fettgedruckte Label */
+    margin-bottom: 1.5rem;
+    color: #fff;
+    text-shadow:
+    -2px -2px 0 black,  
+     2px -2px 0 black,
+    -2px  2px 0 black,
+     2px  2px 0 black; 
+     
+  }
+  
+  .text-center {
+    text-align: center; /* Zentrierter Text */
+  }
+
+  /* TaskEditor.css */
+
+/* Äußerer Container des Editors */
+.m-2-edit {
+    margin: 2rem;
+  }
+  
+  /* Stile für die Formulargruppen */
+  .form-group-edit {
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Stile für die Eingabefelder */
+  .form-control-edit {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    border-radius: 0.375rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+  
+  /* Stile für das Label */
+  .label-edit {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+  
+  /* Zusätzliche Stile für den Textcenter */
+  .text-center {
+    text-align: center;
+  }
+  
+  

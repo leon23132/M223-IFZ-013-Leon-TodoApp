@@ -1,0 +1,259 @@
+.home-container {
+  text-align: center;
+  margin-top: 50px;
+  
+}
+
+@keyframes colorChange {
+  0% {
+    color: rgb(255, 0, 0);
+  }
+
+  /* Startfarbe: Rot */
+  50% {
+    color: rgb(0, 255, 0);
+  }
+
+  /* Zwischenfarbe: Grün */
+  100% {
+    color: rgb(0, 0, 255);
+  }
+
+  /* Endfarbe: Blau */
+}
+
+.home-container h1 {
+  font-weight: bold;
+  font-size: 44px;
+  font-family: Georgia, serif;
+  color: #170101;
+  /* Animation für 3 Sekunden, unendlich wiederholen */
+}
+
+
+.home-container p {
+  font-size: 34px;
+  color: #170101;
+  font-family: Georgia, serif;
+  font-weight: bold;
+}
+.Boreded-Text{
+  text-shadow: 
+  -1px -1px 0 #fff,  
+   1px -1px 0 #fff,
+  -1px  1px 0 #fff,
+   1px  1px 0 #fff; 
+}
+
+.home-container {
+  background-image: url("../Images/HomeImage.jpg");
+  background-size: cover;
+  /* Hiermit wird das Bild auf die gesamte Fläche gestreckt */
+  background-repeat: no-repeat;
+  /* Damit wird das Bild nicht wiederholt */
+  background-position: center center;
+  /* Hiermit wird das Bild zentriert */
+}
+
+
+
+/* Modernes Styling für das Tic-Tac-Toe-Spiel */
+
+.tic-tac-toe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Arial', sans-serif; /* Ändern Sie die Schriftart nach Bedarf */
+}
+
+.board {
+  border: 2px solid #ddd; /* Dickerer Rahmen für das Spielfeld */
+  margin-top: 20px;
+  border-radius: 10px; /* Abgerundete Ecken für das Spielfeld */
+  padding: 10px; /* Innenabstand für das Spielfeld */
+  
+}
+
+.board-row {
+  display: flex;
+  justify-content: center; /* Zentriert die Reihen horizontal */
+  
+}
+
+.square {
+  width: 60px;
+  height: 60px;
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px; /* Größere Schriftgröße */
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Übergangseffekt für die Hervorhebung beim Hovern */
+  background-color: transparent;
+}
+
+
+.square:hover {
+  background-color: #fc0606; /* Hintergrundfarbe ändern, wenn Maus darüber schwebt */
+}
+
+.status {
+  font-size: 28px; /* Größere Schriftgröße */
+  font-weight: bold; /* Fettdruck */
+  margin-bottom: 20px; /* Größerer Abstand nach unten */
+  color: #170101;
+  text-shadow: 
+  -1px -1px 0 #fff,  
+   1px -1px 0 #fff,
+  -1px  1px 0 #fff,
+   1px  1px 0 #fff; 
+}
+
+/* CSS für den Reset-Button */
+.reset-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #4CAF50; /* Hintergrundfarbe */
+  color: rgb(255, 255, 255); /* Textfarbe */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease; /* Übergangseffekt für die Hervorhebung */
+}
+
+.reset-button:hover {
+  background-color: #45a049; /* Hintergrundfarbe bei Hover */
+}
+
+.reset-button {
+  position: relative;
+  width: 150px;
+  height: 55px;
+  border-radius: 45px;
+  border: none;
+  background-color: rgb(151, 95, 255);
+  color: white;
+  box-shadow: 0px 10px 10px rgb(210, 187, 253) inset,
+  0px 5px 10px rgba(5, 5, 5, 0.212),
+  0px -10px 10px rgb(124, 54, 255) inset;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reset-button::before {
+  width: 70%;
+  height: 2px;
+  position: absolute;
+  background-color: rgba(250, 250, 250, 0.678);
+  content: "";
+  filter: blur(1px);
+  top: 7px;
+  border-radius: 50%;
+}
+
+.reset-button::after {
+  width: 70%;
+  height: 2px;
+  position: absolute;
+  background-color: rgba(250, 250, 250, 0.137);
+  content: "";
+  filter: blur(1px);
+  bottom: 7px;
+  border-radius: 50%;
+}
+
+.reset-button:hover {
+  animation: jello-horizontal 0.9s both;
+}
+
+@keyframes jello-horizontal {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+
+  30% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+
+  40% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+
+  50% {
+    transform: scale3d(1.15, 0.85, 1);
+  }
+
+  65% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+
+  75% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+/*
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+*/
+
+@keyframes funkyAnimation {
+  0% {
+    transform: scale(1.5) rotate(0deg);
+    color: rgb(255, 0, 0);
+  }
+  25% {
+    transform: scale(3.5) rotate(90deg);
+    color: rgb(255, 255, 0);
+  }
+  50% {
+    transform: scale(4.5) rotate(180deg);
+    color: rgb(0, 255, 0);
+  }
+  75% {
+    transform: scale(5.5) rotate(270deg);
+    color: rgb(0, 0, 255);
+  }
+  100% {
+    transform: scale(6.5) rotate(360deg);
+    color: rgb(255, 0, 255);
+  }
+}
+
+.winner-text {
+  animation: funkyAnimation 2s linear infinite;
+}
+
+
+
+
+
+
+.winner {
+  /*animation: fadeIn 1s forwards;*/
+  animation: funkyAnimation 10s infinite;
+  font-size: 24px; /* Schriftgröße für den Gewinner-Text */
+  font-weight: bold; /* Fettdruck */
+  color: #4CAF50; /* Farbe des Gewinner-Texts */
+  margin-bottom: 10px; /* Abstand nach unten */
+}
+
+.winner-text {
+  text-transform: uppercase; /* Konvertiert den Gewinner-Text in Großbuchstaben */
+  font-size: 28px; /* Größere Schriftgröße für den Gewinner-Text */
+}
+
