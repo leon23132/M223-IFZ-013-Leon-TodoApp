@@ -1,4 +1,4 @@
-package m459.TodoApplication.TodoApp;
+package m459.TodoApplication.TodoApp.configuration;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
@@ -11,10 +11,10 @@ public class CorsConfig implements WebMvcConfigurer {
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/**")
-            .allowedOrigins("http://localhost:3000") // Erlaubte Ursprünge (deine React-Anwendung)
+        /*registry.addMapping("/**")
+            .allowedOrigins("http://localhost:8080") // Erlaubte Ursprünge (deine React-Anwendung)
             .allowedMethods("GET", "POST", "PUT", "DELETE")
             .allowedHeaders("*")
-            .allowCredentials(true);
+            .allowCredentials(true);*/
     }
 }

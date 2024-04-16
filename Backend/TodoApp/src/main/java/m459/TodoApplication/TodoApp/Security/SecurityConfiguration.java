@@ -8,7 +8,6 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
@@ -16,17 +15,18 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 @Configuration
 public class SecurityConfiguration {
-
+/*
     @Bean
     SecurityFilterChain authenticatedAndFreePagesWithLogin(HttpSecurity http) throws Exception {
-        return http.authorizeRequests()
-                .requestMatchers("/private").hasRole("ADMIN") // Authentifiziert den Pfad "/private" für Benutzer mit der Rolle ADMIN
-                .requestMatchers("/public").authenticated() // Authentifiziert den Pfad "/public"
+        return http.cors().and().authorizeRequests()
+                //.requestMatchers("/private").hasRole("ADMIN") // Authentifiziert den Pfad "/private" für Benutzer mit der Rolle ADMIN
+                //.requestMatchers("/public").authenticated() // Authentifiziert den Pfad "/public"
+                .requestMatchers("/api/auth/signup").permitAll()
                 .anyRequest().permitAll() // Ermöglicht den Zugriff auf alle anderen Pfade für alle Benutzer
                 .and().formLogin() // Aktiviert das Formular-Login
                 .and().build(); // Beendet die Konfiguration und erstellt die SecurityFilterChain
     }
-
+/* 
     @Bean
     public UserDetailsService users(@Autowired PasswordEncoder pwEnc) {
         UserDetails user = User.builder()
@@ -46,11 +46,14 @@ public class SecurityConfiguration {
         // Benutzerdetails verwaltet
         return new InMemoryUserDetailsManager(user, admin);
     }
-
+    */
     // Definiert einen PasswordEncoder, der zum Verschlüsseln von Passwörtern
     // verwendet wird
+    /*
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder(); // Verwendet den BCrypt-Algorithmus für das Hashing
     }
+     */
+    
 }
