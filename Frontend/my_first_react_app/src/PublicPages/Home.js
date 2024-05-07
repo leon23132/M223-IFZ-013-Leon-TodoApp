@@ -1,6 +1,7 @@
 import React from "react";
-import TicTacToe from "./TicTacToe";
-import "./CSS/home.css";
+import TicTacToe from "../TicTacToe";
+import "./../CSS/home.css";
+
 const Home = () => {
   return (
     <div className="home-container">

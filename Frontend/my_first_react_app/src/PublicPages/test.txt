@@ -6,7 +6,7 @@ export async function getData(url) {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}`,
                 'Accept': '*/*', // Accept-Header hinzufügen
-                'Host': window.location.host // Host-Header hinzufügen
+                'Host': 'calculated at runtime' // Host-Header hinzufügen
             }
         });
         if (!response.ok) {
@@ -31,7 +31,7 @@ export async function postData(url, data) {
                         'Content-Type': 'application/json',
                         'Authorization': `Bearer ${token}`,
                         'Accept': '*/*', // Accept-Header hinzufügen
-                        'Host': window.location.host // Host-Header hinzufügen
+                        'Host': 'calculated at runtime' // Host-Header hinzufügen
                     },
                     body: JSON.stringify(data)
                 }
@@ -44,7 +44,7 @@ export async function postData(url, data) {
                         'Content-Type': 'application/json',
                         'Authorization': `Bearer ${token}`,
                         'Accept': '*/*', // Accept-Header hinzufügen
-                        'Host': window.location.host // Host-Header hinzufügen
+                        'Host': 'calculated at runtime' // Host-Header hinzufügen
                     }
                 }
             );
@@ -71,7 +71,7 @@ export async function putData(url, data) {
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${token}`,
                     'Accept': '*/*', // Accept-Header hinzufügen
-                    'Host': window.location.host // Host-Header hinzufügen
+                    'Host': 'calculated at runtime' // Host-Header hinzufügen
                 },
                 body: JSON.stringify(data),
             }
@@ -97,7 +97,7 @@ export async function deleteData(url) {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}`,
                 'Accept': '*/*', // Accept-Header hinzufügen
-                'Host': window.location.host // Host-Header hinzufügen
+                'Host': 'calculated at runtime' // Host-Header hinzufügen
             }
         });
         if (!response.ok) {
