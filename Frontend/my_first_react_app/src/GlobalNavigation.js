@@ -4,6 +4,7 @@ import Home from "./PublicPages/Home";
 import { TaskDisplay } from "./TaskDisplay";
 import './CSS/GlobalNavigationSt.css';
 import LoginForm from "./Login/LoginForm";
+import SignupForm from "./Login/SignupForm";
 
 export function GlobalNavigation() {
     const [isLoggedIn, setIsLoggedIn] = useState(false); // Zustand für den Anmeldestatus
@@ -14,6 +15,7 @@ export function GlobalNavigation() {
 
     const handleLogout = () => {
         setIsLoggedIn(false); // Setze den Anmeldestatus auf false
+        localStorage.setItem('accessToken', null);
     };
 
     return (
@@ -23,8 +25,11 @@ export function GlobalNavigation() {
                     <div className="col-2">
                         <NavLink className="m-2 btn btn-block btn-primary-bar" activeClassName="active" id="Navigation"
                             to="/home">Home</NavLink>
-                        <NavLink className="m-2 btn btn-block btn-primary-bar" activeClassName="active" id="Navigation"
-                            to="/task">Task</NavLink>
+                        {isLoggedIn && (
+                            <NavLink className="m-2 btn btn-block btn-primary-bar" activeClassName="active" id="Navigation"
+                                to="/task">Task</NavLink>
+                        )}
+
                         {/* Wenn der Benutzer nicht angemeldet ist, zeige den Link zum LoginForm */}
                         {!isLoggedIn && (
                             <NavLink className="m-2 btn btn-block btn-primary-bar" activeClassName="active" id="Navigation"
@@ -32,15 +37,27 @@ export function GlobalNavigation() {
                         )}
                         {/* Wenn der Benutzer angemeldet ist, zeige den Logout-Button im Navigationsmenü */}
                         {isLoggedIn && (
-                            <button className="m-2 btn btn-block btn-primary-bar" onClick={handleLogout}>Logout</button>
+                            <NavLink className="m-2 btn btn-block btn-primary-bar" onClick={handleLogout} activeClassName="active" id="Navigation">Logout</NavLink>
+
                         )}
+
+                        <NavLink className="m-2 btn btn-block btn-primary-bar" activeClassName="active" id="Navigation"
+                            to="/Signup">Signup</NavLink>
+
+                        {isLoggedIn && (
+                            <button className="login-view" disabled>Logged in</button>
+                        )}
+
+
                     </div>
                     <div className="col">
                         <Routes>
                             <Route path="/LoginForm" element={<LoginForm onLogin={handleLogin} />} />
                             <Route path="/home" element={<Home />} />
-                            <Route path="/task" element={<TaskDisplay />} />
+                            <Route path="/task" element={isLoggedIn ? <TaskDisplay /> : <Navigate to={"/LoginForm"} />} />
                             <Route path="/" element={<Navigate to="/home" />} />
+                            <Route path="/Signup" element={<SignupForm />} />
+                            <Route path="/*" element={<Navigate to="/home" />} />
                         </Routes>
                     </div>
                 </div>

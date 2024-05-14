@@ -6,6 +6,7 @@ export async function getData(url) {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}`,
                 'Accept': '*/*', // Accept-Header hinzufügen
+                'Access-Control-Allow-Origin':'*',
                 'Host': window.location.host // Host-Header hinzufügen
             }
         });
@@ -31,6 +32,7 @@ export async function postData(url, data) {
                         'Content-Type': 'application/json',
                         'Authorization': `Bearer ${token}`,
                         'Accept': '*/*', // Accept-Header hinzufügen
+                        'Access-Control-Allow-Origin':'*',
                         'Host': window.location.host // Host-Header hinzufügen
                     },
                     body: JSON.stringify(data)
@@ -44,6 +46,7 @@ export async function postData(url, data) {
                         'Content-Type': 'application/json',
                         'Authorization': `Bearer ${token}`,
                         'Accept': '*/*', // Accept-Header hinzufügen
+                        'Access-Control-Allow-Origin':'*',
                         'Host': window.location.host // Host-Header hinzufügen
                     }
                 }
@@ -71,6 +74,7 @@ export async function putData(url, data) {
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${token}`,
                     'Accept': '*/*', // Accept-Header hinzufügen
+                    'Access-Control-Allow-Origin':'*',
                     'Host': window.location.host // Host-Header hinzufügen
                 },
                 body: JSON.stringify(data),
@@ -97,6 +101,7 @@ export async function deleteData(url) {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}`,
                 'Accept': '*/*', // Accept-Header hinzufügen
+                'Access-Control-Allow-Origin':'*',
                 'Host': window.location.host // Host-Header hinzufügen
             }
         });
