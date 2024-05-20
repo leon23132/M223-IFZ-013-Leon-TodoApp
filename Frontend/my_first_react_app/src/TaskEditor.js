@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import './CSS/TaskEditor.css';
 
 export function TaskEditor({ task, saveCallback, cancelCallback }) {
+    // State variables for form data and error handling
     const [formData, setFormData] = useState({
         taskName: task.taskName,
         taskDescription: task.taskDescription,
@@ -14,9 +15,11 @@ export function TaskEditor({ task, saveCallback, cancelCallback }) {
     const [dateError, setDateError] = useState(false);
     const [statusError, setStatusError] = useState(false);
 
+    // Function to handle save button click
     const handleSave = (ev) => {
-        // Überprüfen, ob alle erforderlichen Felder ausgefüllt sind
+        // Check if all required fields are filled
         if (formData.taskName && formData.taskDescription && formData.taskDate && formData.taskStatus) {
+            // Create a new task object
             const newTask = {
                 ...task,
                 taskName: formData.taskName,
@@ -24,8 +27,9 @@ export function TaskEditor({ task, saveCallback, cancelCallback }) {
                 taskDate: new Date(formData.taskDate).getTime(),
                 taskStatus: formData.taskStatus
             };
-            saveCallback(newTask);
+            saveCallback(newTask); // Call save callback function
         } else {
+            // Set error states if any required field is empty
             if (!formData.taskName) setNameError(true);
             if (!formData.taskDescription) setDescriptionError(true);
             if (!formData.taskDate) setDateError(true);
@@ -33,13 +37,14 @@ export function TaskEditor({ task, saveCallback, cancelCallback }) {
         }
     };
 
+    // Function to handle input change in form fields
     const selectorChanged = (ev) => {
         const newFormData = { ...formData };
         const { name, value } = ev.target;
         newFormData[name] = value;
         setFormData(newFormData);
 
-        // Fehlerzustände zurücksetzen, wenn das Eingabefeld geändert wird
+        // Reset error states if the input field is changed
         if (name === "taskName") setNameError(false);
         if (name === "taskDescription") setDescriptionError(false);
         if (name === "taskDate") setDateError(false);
@@ -88,6 +93,7 @@ export function TaskEditor({ task, saveCallback, cancelCallback }) {
                 {statusError && <span className="error-text">Bitte wählen Sie einen Status.</span>}
             </div>
             <div className="text-center">
+                {/* Save and cancel buttons */}
                 <button className="btn btn-primary m-1" onClick={handleSave}>
                     Speichern
                 </button>

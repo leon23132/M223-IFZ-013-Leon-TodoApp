@@ -1,186 +1,202 @@
 /* styles.css */
 
-/* Stil für das Hauptcontainer */
+/* Stil für den Hauptcontainer des Login-Bereichs */
 .login-container {
-    margin: 20px;
-    background-size: cover;
-  }
-  
-  /* Stil für die Eingabefelder */
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  /* Stil für Labels */
-  label {
-    font-weight: bold;
-  }
-  
-  /* Stil für die Buttons */
-  .btn {
-    margin-right: 10px;
-  }
-  
-  /* Zentrieren der Buttons */
-  .text-center {
-    text-align: center;
-  }
+  margin: 20px;
+  background-size: cover;
+}
 
-  
+/* Stil für die Eingabefelder */
+.form-group {
+  margin-bottom: 15px;
+}
+
+/* Stil für Labels */
+label {
+  font-weight: bold;
+}
+
+/* Stil für die Buttons */
+.btn {
+  margin-right: 10px;
+}
+
+/* Zentrieren der Texte */
+.text-center {
+  text-align: center;
+}
+
+
 /* TaskEditor.css */
 
+/* Stil für die Formulargruppen im Signup-Bereich */
 .form-group-signup {
-    margin-bottom: 1rem; /* Abstand zwischen den Formularelementen */
-  }
-  
-  label {
-    font-weight: bold; /* Fettgedruckte Label */
-    margin-bottom: 1.5rem;
-    color: #fff;
-    text-shadow:
-    -2px -2px 0 black,  
-     2px -2px 0 black,
-    -2px  2px 0 black,
-     2px  2px 0 black; 
-     
-  }
-  
-  .text-center {
-    text-align: center; /* Zentrierter Text */
-  }
+  margin-bottom: 1rem; /* Abstand zwischen den Formularelementen */
+}
 
-  /* TaskEditor.css */
+/* Fettgedruckte Label mit Textschatten */
+label {
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: #fff;
+  text-shadow: -2px -2px 0 black,  
+               2px -2px 0 black,
+              -2px  2px 0 black,
+               2px  2px 0 black; 
+}
 
-/* Äußerer Container des Editors */
+/* Zentrierter Text */
+.text-center {
+  text-align: center;
+}
+
+/* Äußerer Container des Signup-Editors */
 .m-2-signup {
-    margin: 2rem;
-    font-size: 34px;
-    color: #170101;
-    font-family: Georgia, serif;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 50px;
-    padding-bottom: 50%;
-  }
-  
-  /* Stile für die Formulargruppen */
-  .form-group-singup {
-    margin-bottom: 1.5rem;
-  }
-  
-  /* Stile für die Eingabefelder */
-  .form-control-signup {
-    width: 100%;
-    padding: 0.75rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    color: #495057;
-    background-color: #f8f9fa;
-    border: 1px solid #ced4da;
-    border-radius: 0.375rem;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  }
+  margin: 2rem;
+  font-size: 34px;
+  color: #170101;
+  font-family: Georgia, serif;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 50px;
+  padding-bottom: 50%;
+}
 
-  .errormassage{
-    color: red;
-    font-size: 20px;
-  }
-  
-  /* Stile für das Label */
-  .label-signup {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-    
-  }
-  
-  /* Zusätzliche Stile für den Textcenter */
-  .text-center {
-    text-align: center;
-  }
-  
-  
-  .wrap {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .log-button {
-    min-width: 200px;
-    min-height: 30px;
-    font-family: 'Nunito', sans-serif;
-    font-size: 22px;
-    text-transform: uppercase;
-    letter-spacing: 1.3px;
-    font-weight: 700;
-    color: #313133;
-    background: #06e4f0;
+/* Stile für die Formulargruppen */
+.form-group-singup { /* Hier war ein Tippfehler, sollte wahrscheinlich 'signup' sein */
+  margin-bottom: 1.5rem;
+}
+
+/* Stile für die Eingabefelder */
+.form-control-signup {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #f8f9fa;
+  border: 1px solid #ced4da;
+  border-radius: 0.375rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+/* Fehlermeldungsstil */
+.errormassage { /* Hier war ein Tippfehler, sollte 'errorMessage' sein */
+  color: red;
+  font-size: 20px;
+}
+
+/* Stil für das Label */
+.label-signup {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+/* Zusätzliche Stile für den Textcenter */
+.text-center {
+  text-align: center;
+}
+
+/* Stil für den Wrapper */
+.wrap {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Stil für den Log-In-Button */
+.log-button {
+  min-width: 200px;
+  min-height: 30px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  font-weight: 700;
+  color: #313133;
+  background: #06e4f0;
   background: linear-gradient(90deg, rgba(129,230,217,1) 0%, rgba(79,209,197,1) 100%);
-    border: none;
-    border-radius: 500px;
-    box-shadow: 12px 12px 24px rgba(79,209,197,.64);
-    transition: all 0.3s ease-in-out 0s;
-    cursor: pointer;
-    outline: none;
-    position: relative;
-    padding: 10px;
-    margin-top: 5%;
-    margin-bottom: 2%;
-    }
-  
-  .log-button::before {
+  border: none;
+  border-radius: 500px;
+  box-shadow: 12px 12px 24px rgba(79,209,197,.64);
+  transition: all 0.3s ease-in-out 0s;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  padding: 10px;
+  margin-top: 5%;
+  margin-bottom: 2%;
+}
+
+/* Pseudo-Element für den Log-In-Button */
+.log-button::before {
   content: '';
-    border-radius: 500px;
-    min-width: calc(250px + 12px);
-    min-height: calc(45px + 12px);
-    border: 6px solid #00FFCB;
-    box-shadow: 0 0 60px rgba(0,255,203,.64);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    transition: all .3s ease-in-out 0s;
-  }
-  
-  .log-button:hover, .button:focus {
-    color: #313133;
-    transform: translateY(-6px);
-  }
-  
-  .log-button:hover::before, button:focus::before {
-    opacity: 1;
-  }
-  
-  .log-button::after {
-    content: '';
-    width: 30px; height: 30px;
-    border-radius: 100%;
-    border: 6px solid #00FFCB;
-    position: absolute;
-    z-index: -1;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    animation: ring 1.5s infinite;
-  }
-  
-  .log-button:hover::after, button:focus::after {
-    animation: none;
-    display: none;
-  }
-  
-  @keyframes ring {
-    0% {
+  border-radius: 500px;
+  min-width: calc(250px + 12px);
+  min-height: calc(45px + 12px);
+  border: 6px solid #00FFCB;
+  box-shadow: 0 0 60px rgba(0,255,203,.64);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all .3s ease-in-out 0s;
+}
+
+/* Hover-Effekt für den Log-In-Button */
+.log-button:hover, .button:focus {
+  color: #313133;
+  transform: translateY(-6px);
+}
+
+/* Hover-Effekt für das Pseudo-Element */
+.log-button:hover::before, button:focus::before {
+  opacity: 1;
+}
+
+/* Pseudo-Element für den Log-In-Button */
+.log-button::after {
+  content: '';
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  border: 6px solid #00FFCB;
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: ring 1.5s infinite;
+}
+
+/* Hover-Effekt für das Pseudo-Element */
+.log-button:hover::after, button:focus::after {
+  animation: none;
+  display: none;
+}
+
+/* Keyframe-Animation für den Ring */
+@keyframes ring {
+  0% {
       width: 30px;
       height: 30px;
       opacity: 1;
-    }
-    100% {
+  }
+  100% {
       width: 300px;
       height: 300px;
       opacity: 0;
-    }
   }
+}
+
+/* Erfolgsmeldungsstil */
+.success-message {
+  color: rgb(1, 255, 39);
+  font-size: 20px;
+  margin-top: 10px;
+  background-color: #000;
+  padding: 10px;
+}

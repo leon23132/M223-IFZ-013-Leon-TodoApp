@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { getData, postData, putData, deleteData } from './../Reqeusts.js'; // Importiere die Request-Funktionen
 import './../CSS/authification/Login.css';
 
 function LoginForm({ onLogin, onLogout }) {
+  // State variables for form data, error handling, empty fields, success message, and submission status
   const [formData, setFormData] = useState({
     username: '',
     password: ''
@@ -12,15 +12,17 @@ function LoginForm({ onLogin, onLogout }) {
   const [error, setError] = useState('');
   const [emptyFields, setEmptyFields] = useState([]);
   const [successMessage, setSuccessMessage] = useState('');
-  const [submitted, setSubmitted] = useState(false); // Zustand für die Anzeige der Erfolgsmeldung
+  const [submitted, setSubmitted] = useState(false);
 
+  // Function to handle form input changes
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  // Function to handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Überprüfen, ob beide Felder ausgefüllt sind
+    // Check if both fields are filled
     if (!formData.username || !formData.password) {
       const missingFields = [];
       if (!formData.username) missingFields.push('Benutzername');
@@ -30,17 +32,18 @@ function LoginForm({ onLogin, onLogout }) {
       return;
     }
     try {
+      // Send login request to the server
       const response = await axios.post('http://localhost:8080/api/auth/signin', formData);
       console.log('Erfolgreich eingeloggt:', response.data);
-      localStorage.setItem('accessToken', response.data.accessToken); // Token im Local Storage speichern
-      onLogin(); // Aufruf der onLogin-Funktion
-      setSuccessMessage('Erfolgreich eingeloggt.'); // Setze die Erfolgsmeldung
-      setSubmitted(true); // Setze den Zustand für die Anzeige der Erfolgsmeldung
-      // Leere die Formulardaten
+      localStorage.setItem('accessToken', response.data.accessToken); // Store token in local storage
+      onLogin(); // Call the onLogin function passed as prop
+      setSuccessMessage('Erfolgreich eingeloggt.'); // Set success message
+      setSubmitted(true); // Set submission status to true
+      // Clear form data
       setFormData({ username: '', password: '' });
     } catch (error) {
       console.error('Fehler beim Einloggen:', error);
-      setError('Fehler beim Einloggen. Bitte überprüfen Sie Ihre Daten.'); // Setze den Fehlerzustand
+      setError('Fehler beim Einloggen. Bitte überprüfen Sie Ihre Daten.'); // Set error message
     }
   };
 
@@ -55,7 +58,7 @@ function LoginForm({ onLogin, onLogout }) {
             </div>
             <div className='form-group-login'>
               <label>Passwort</label>
-              <input className='form-control-login' type="password" name="password" value={formData.password} onChange={handleChange} placeholder='Password' />
+              <input className='form-control-login' type="password" name="password" value={formData.password} onChange={handleChange} placeholder='Passwort' />
             </div>
             <button
               type="submit"

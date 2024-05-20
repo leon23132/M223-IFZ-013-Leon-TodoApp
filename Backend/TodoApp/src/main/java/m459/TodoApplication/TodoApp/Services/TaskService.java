@@ -18,11 +18,13 @@ public class TaskService {
         this.taskRepository = taskRepository;
     }
 
+    // Method to delete a task by its ID
     @Transactional
     public void deleteTask(int taskId) {
         taskRepository.deleteByTaskid(taskId);
     }
 
+    // Method to update a task by its ID
     @Transactional
     public void updateTask(int taskId, Task updatedTask) {
         Task task = taskRepository.findByTaskid(taskId);
@@ -37,41 +39,39 @@ public class TaskService {
         }
     }
 
+    // Method to retrieve all tasks
     public List<Task> getAllTasks() {
         return taskRepository.findAll();
     }
 
+    // Method to retrieve filtered tasks by task status
     @Transactional
     public List<Task> getFilteredTasks(String taskStatus) {
         return taskRepository.findByTaskStatus(taskStatus);
     }
 
+    // Method to add a new task
     @Transactional
     public void addTask(Task task) {
         taskRepository.save(task);
     }
 
+    // Method to retrieve tasks filtered by both task status and date
     public List<Task> getFilteredDateStatus(String taskStatus, String datefilter) {
-        // Überprüfen, ob taskStatus "alle" ist oder nicht angegeben wurde
-        if (taskStatus == null || "alle".equalsIgnoreCase(taskStatus)) {
-            // Überprüfen, ob datefilter "asc" oder "desc" ist oder nicht angegeben wurde
+        if (taskStatus == null || "all".equalsIgnoreCase(taskStatus)) {
             if ("asc".equals(datefilter)) {
                 return taskRepository.findAllByOrderByTaskDateAsc();
             } else if ("desc".equals(datefilter)) {
                 return taskRepository.findAllByOrderByTaskDateDesc();
             } else {
-                // datefilter ist nicht angegeben oder leer, gib einfach alle Aufgaben zurück
                 return taskRepository.findAll();
             }
         } else {
-            // Überprüfen, ob datefilter "asc" oder "desc" ist oder nicht angegeben wurde
             if ("asc".equals(datefilter)) {
                 return taskRepository.findByTaskStatusOrderByTaskDateAsc(taskStatus);
             } else if ("desc".equals(datefilter)) {
                 return taskRepository.findByTaskStatusOrderByTaskDateDesc(taskStatus);
             } else {
-                // datefilter ist nicht angegeben oder leer, gib Aufgaben mit dem angegebenen
-                // taskStatus zurück
                 return taskRepository.findByTaskStatus(taskStatus);
             }
         }
