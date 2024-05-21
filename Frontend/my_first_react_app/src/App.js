@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import { GlobalNavigation } from './GlobalNavigation'; // Stellen Sie sicher, dass der Pfad korrekt ist
 import HomeImage from './Images/LogoImage.jpg'
+import Logo_TWO from './Images/Logo_TWOTR.png'
 
 function App() {
     return (
@@ -11,7 +12,7 @@ function App() {
             </header>
             <body className='Body-App'>
                 <div className='Bodie-Todo'>
-                    <img src={HomeImage} alt='Beschreibung des Bildes' width="50" height="33" className='LogoImage' />
+                    <img src={Logo_TWO} alt='Beschreibung des Bildes' width="50" height="33" className='LogoImage' />
 
                     <GlobalNavigation />
 

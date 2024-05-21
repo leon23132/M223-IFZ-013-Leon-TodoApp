@@ -197,6 +197,6 @@ label {
   color: rgb(1, 255, 39);
   font-size: 20px;
   margin-top: 10px;
-  background-color: #000;
   padding: 10px;
+  background-color: transparent;
 }

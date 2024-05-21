@@ -64,7 +64,7 @@ function SignupForm({ onSignup }) {
           </div>
         </form>
       ) : (
-        <p>Erfolgreich registriert: {successMessage}</p>
+        <p className='success-message'>Erfolgreich registriert: {successMessage}</p>
       )}
     </div>
   );
