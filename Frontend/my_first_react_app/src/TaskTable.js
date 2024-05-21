@@ -40,7 +40,7 @@ export function TaskTable({ tasklist, editCallback, deleteCallback, selectorChan
                     <th>Status <br />
                         {/* Dropdown for status filtering */}
                         <select className={`form-control-edit`} name="taskStatus" onChange={handleFilterChange}>
-                            <option value="alle">Alle</option>
+                            <option value="all">Alle</option>
                             <option value="In Bearbeitung">In Bearbeitung</option>
                             <option value="Abgeschlossen">Abgeschlossen</option>
                             <option value="Verspätet">Verspätet</option>
